@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Data Collection Form | Ojaeko</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/Oja Eko logo_Favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="form-logo">
+        <img src="./img/Main-logo.svg" alt="Logo" />
+    </div>
+
+    <form action="submit" class="main-form" enctype="multipart/form-data">
+        <h5 class="form-title">Data collection form for prospective vendors.</h5>
+
+        <div class="form-group-cont">
+            <div class="form-group extra">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group extra">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        </div>
+
+        <div class="form-group-cont">
+            <div class="form-group extra">
+                <label for="signature">Digital Signature</label>
+                <input type="file" id="signature" name="signature" accept="image/*" required />
+            </div>
+
+            <div class="form-group extra">
+                <label for="passport">Passport Photo</label>
+                <input type="file" id="passport" name="passport" accept="image/*" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category of Product/Service</label>
+            <input type="text" id="category" name="category" placeholder="E.g., Fashion, Food, Electronics" required />
+        </div>
+
+        <div class="form-group">
+            <label for="account">Account Details</label>
+            <textarea id="account" name="account" placeholder="Bank name, Account number, Account name"
+                required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Enter your full business or home address"
+                required></textarea>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="form-group">
+            <label>Terms & Conditions</label>
+            <div class="terms-container" id="termsBox">
+                <ul class="terms-list">
+                    <li>1. Definitions
+                        <ul>
+                            <li>1.1 Platform: Refers to Ojaeko.net, including its website, mobile applications, and
+                                related services.</li>
+                            <li>1.2 Vendor: Any individual, business, or entity registered to sell goods or services on
+                                the Ojaeko.net platform.</li>
+                            <li>1.3 Consumer: Any individual or entity purchasing goods or services through the
+                                Ojaeko.net platform.</li>
+                            <li>1.4 Electronic Transactions Bill 2023: A proposed bill in Nigeria aimed at providing a
+                                legal framework for electronic transactions, including recognition of electronic
+                                documents, signatures, and consumer protections (still under legislative review as of
+                                the latest information).</li>
+                            <li>1.5 Goods/Services: Products or services listed by the Vendor for sale on the Ojaeko.net
+                                platform.</li>
+                        </ul>
+                    </li>
+
+                    <li>2. Eligibility to Become a Vendor
+                        <ul>
+                            <li>2.1 To register as a Vendor on Ojaeko.net, you must: Be a legally recognized individual
+                                (at least 18 years old) or a registered business entity in Nigeria, compliant with the
+                                Companies and Allied Matters Act (CAMA) 2020. Have a valid registration with the
+                                Corporate Affairs Commission (CAC) for businesses or provide verifiable identification
+                                for individuals. Register with the National Information Technology Development Agency
+                                (NITDA) as required under the NITDA Act 2007 for entities engaging in e-commerce
+                                activities, if applicable. Have a valid Tax Identification Number (TIN) issued by the
+                                Federal Inland Revenue Service (FIRS) and comply with tax obligations under the Finance
+                                Act 2023, including Value Added Tax (VAT) and corporate income tax. Maintain a
+                                functional bank account in Nigeria for receiving payments. Agree to comply with all
+                                applicable Nigerian laws, including the Cybercrimes Act 2015 and the FCCPA.</li>
+                            <li>2.2 Ojaeko.net reserves the right to reject or terminate any Vendor application or
+                                account that does not meet these eligibility criteria or violates these Terms.</li>
+                        </ul>
+                    </li>
+
+                    <li>3. Vendor Registration and Account Responsibilities
+                        <ul>
+                            <li>3.1 Registration Process: Complete the online vendor registration form on Ojaeko.net,
+                                providing accurate and verifiable information, including business registration details,
+                                tax information, and contact details. - Submit any additional documentation requested by
+                                Ojaeko.net, such as CAC certificates, TIN, or proof of NITDA registration. - Pay any
+                                applicable registration or subscription fees as outlined by Ojaeko.net</li>
+                            <li>3.2 Account Security: You are responsible for maintaining the confidentiality of your
+                                account login credentials. You must notify Ojaeko.net immediately of any unauthorized
+                                access or security breach. Under the Cybercrimes Act 2015, you are liable for any
+                                fraudulent activities conducted through your account due to negligence in securing your
+                                credentials.</li>
+                            <li>3.3 Accuracy of Information: All information provided during registration and throughout
+                                your use of the platform must be accurate and up-to-date. Misrepresentation of business
+                                details or products is prohibited under Section 14 of the Cybercrimes Act 2015 and may
+                                result in account suspension or legal action.</li>
+                        </ul>
+                    </li>
+
+                    <li>4. Listing and Selling Goods/Services
+                        <ul>
+                            <li>4.1 Product Listings: Vendors must ensure that all listed goods or services comply with
+                                Nigerian laws, including the Standards Organisation of Nigeria (SON) regulations for
+                                product quality and safety. Listings must include accurate descriptions, images,
+                                pricing, and delivery timelines. Misrepresentation of goods or services is prohibited
+                                under the FCCPA. Prohibited items (e.g., arms, explosives, hazardous materials, or
+                                counterfeit goods) must not be listed, in accordance with Nigerian Shipping and Maritime
+                                Laws and the Cybercrimes Act 2015.</li>
+                            <li>4.2 Pricing and Taxes: Vendors are to provide prices, inclusive of applicable taxes
+                                (e.g., VAT as required by the Finance Act 2023). Ojaeko.net will add markup to set the
+                                listing prices, collect and remit VAT on behalf of Vendors, as mandated by law, and
+                                provide remittance confirmations.</li>
+                            <li>4.3 Inventory Management: Vendors must maintain accurate inventory records and update
+                                availability promptly to avoid overselling. Failure to fulfill orders due to inaccurate
+                                inventory may result in penalties or account suspension.</li>
+                            <li>4.4 Electronic Transactions: All transactions on the platform are conducted
+                                electronically and are subject to the provisions of the proposed Electronic Transactions
+                                Bill 2023, which recognizes electronic documents, signatures, and records as legally
+                                valid. Vendors must ensure that electronic contracts with consumers comply with common
+                                law principles and the Evidence Act 2011 (as amended) for admissibility of electronic
+                                evidence.</li>
+                        </ul>
+                    </li>
+
+                    <li>5. Order Fulfillment and Delivery
+                        <ul>
+                            <li>5.1 Order Processing: Vendors must process and fulfill orders within the timelines
+                                specified in their listings. Failure to fulfill orders may result in penalties, refunds,
+                                or account suspension, in line with consumer protection obligations under the FCCPA.
+                            </li>
+                            <li>5.2 Delivery: Deliveries are carried out through Ojaeko.net’s logistics partners.
+                                Delivery timelines must be clearly communicated to consumers at the point of purchase.
+                                Ojaeko.net is not liable for delays or failures in delivery caused by third-party
+                                logistics providers.</li>
+                            <li>5.3 Returns and Refunds: Vendors must comply with Ojaeko.net’s return and refund policy,
+                                which aligns with the FCCPA and protects consumers from defective or misrepresented
+                                goods. - Returns must be processed within [insert timeframe, e.g., 7 days] of delivery,
+                                and refunds must be issued promptly upon approval.</li>
+                        </ul>
+                    </li>
+
+                    <li>6. Payments and Fees
+                        <ul>
+                            <li>6.1 Payment Processing: Payments for goods/services are processed through Ojaeko.net’s
+                                secure payment gateway, compliant with Central Bank of Nigeria (CBN) regulations and the
+                                Cybercrimes Act 2015. Vendors will receive payments (less applicable fees and taxes)
+                                within [insert timeframe, e.g., 7 business days] after order fulfillment, subject to
+                                verification.</li>
+                            <li>6.2 Fees: Vendors agree to pay Ojaeko.net a commission or listing fee as outlined in the
+                                Vendor Fee Schedule (available upon registration). Additional fees may apply for premium
+                                services, such as advertising or expedited payment processing.</li>
+                            <li>6.3 Tax Compliance: Vendors are responsible for complying with all tax obligations,
+                                including VAT and corporate income tax, as required by the Finance Act 2023. Ojaeko.net
+                                may withhold taxes as required by law and provide Vendors with necessary tax
+                                documentation.</li>
+                        </ul>
+                    </li>
+
+                    <li>7. Consumer Protection and Data Privacy
+                        <ul>
+                            <li>7.1 Consumer Rights: Vendors must adhere to consumer protection laws under the FCCPA,
+                                including providing accurate product information, honoring warranties, and addressing
+                                consumer complaints promptly. Fraudulent practices, such as misrepresentation or
+                                non-delivery, are prohibited and may result in legal action under the Cybercrimes Act
+                                2015.</li>
+                            <li>7.2 Data Protection: Vendors must comply with the Nigeria Data Protection Regulation
+                                (NDPR) under the NITDA Act 2007, ensuring the protection of consumer personal data
+                                collected during transactions. Unauthorized access to or misuse of consumer data is
+                                prohibited and may result in penalties under the Cybercrimes Act 2015 and NDPR.</li>
+                            <li>7.3 Dispute Resolution: Vendors must cooperate with Ojaeko.net to resolve consumer
+                                complaints or disputes promptly. Disputes not resolved amicably may be referred to
+                                mediation or arbitration in Lagos, Nigeria, in accordance with the Arbitration and
+                                Conciliation Act.</li>
+                        </ul>
+                    </li>
+
+                    <li>8. Intellectual Property and Branding
+                        <ul>
+                            <li>8.1 Vendor Intellectual Property: Vendors warrant that they have the legal right to use
+                                any intellectual property (e.g., trademarks, logos, product images) in their listings.
+                                Ojaeko.net is not liable for any intellectual property disputes arising from Vendor
+                                content.</li>
+                            <li>8.2 Ojaeko.net’s Intellectual Property: Vendors may not use Ojaeko.net’s trademarks,
+                                logos, or branding without prior written consent. Unauthorized use may result in legal
+                                action and account termination.</li>
+                        </ul>
+                    </li>
+
+                    <li>9. Prohibited Activities
+                        <ul>
+                            <li>9.1 Vendors are prohibited from: Engaging in fraudulent activities, including
+                                misrepresentation of goods or non-delivery, as outlined in Section 14 of the Cybercrimes
+                                Act 2015. - Listing prohibited or illegal items, including those restricted under
+                                Nigerian Shipping and Maritime Laws. Manipulating pricing or engaging in
+                                anti-competitive practices, in violation of the FCCPA. Using the platform for money
+                                laundering or other illegal financial transactions, as regulated by the CBN and the
+                                Economic and Financial Crimes Commission (EFCC).</li>
+                            <li>9.2 Ojaeko.net reserves the right to suspend or terminate Vendor accounts for violations
+                                of these prohibitions.</li>
+                        </ul>
+                    </li>
+
+                    <li>10. Termination and Suspension
+                        <ul>
+                            <li>10.1 Termination by Vendor: Vendors may terminate their account by providing [insert
+                                timeframe, e.g., 30 days] written notice to Ojaeko.net. - Outstanding orders must be
+                                fulfilled, and fees settled before termination.</li>
+                            <li>10.2 Termination by Ojaeko.net: Ojaeko.net may suspend or terminate a Vendor’s account
+                                for: Breach of these Terms. Non-compliance with Nigerian laws, including the Cybercrimes
+                                Act 2015 or FCCPA. Failure to fulfill orders or resolve consumer complaints. Suspected
+                                fraudulent or illegal activities.</li>
+                            <li>10.3 Upon termination, Vendors must cease using the platform and settle any outstanding
+                                fees or obligations.</li>
+                        </ul>
+                    </li>
+
+                    <li>11. Liability and Indemnity
+                        <ul>
+                            <li>11.1 Limitation of Liability: Ojaeko.net is not liable for losses arising from Vendor
+                                actions, including non-delivery, defective products, or misrepresentation. -
+                                Ojaeko.net’s liability is limited to the fees paid by the Vendor for platform services.
+                            </li>
+                            <li>11.2 Indemnity: Vendors agree to indemnify Ojaeko.net against any claims, damages, or
+                                losses arising from their actions, including violations of consumer rights, intellectual
+                                property disputes, or non-compliance with Nigerian laws.</li>
+                        </ul>
+                    </li>
+
+                    <li>12. Governing Law and Jurisdiction
+                        <ul>
+                            <li>12.1 These Terms are governed by the laws of the Federal Republic of Nigeria, including
+                                the Electronic Transactions Bill 2023 (if enacted), the Cybercrimes Act 2015, and the
+                                FCCPA.</li>
+                            <li>12.2 Any disputes arising from these Terms shall be resolved through negotiation,
+                                mediation, or arbitration in Lagos, Nigeria. If unresolved, disputes shall be subject to
+                                the exclusive jurisdiction of the courts in Lagos, Nigeria.</li>
+                        </ul>
+                    </li>
+
+                    <li>13. Amendments to Terms
+                        <ul>
+                            <li>13.1 Ojaeko.net reserves the right to amend these Terms at any time. Vendors will be
+                                notified of changes via email or the platform.</li>
+                            <li>13.2 Continued use of the platform after amendments constitutes acceptance of the
+                                revised Terms.</li>
+                        </ul>
+                    </li>
+
+                    <li>14. Compliance with the Electronic Transactions Bill 2023
+                        <ul>
+                            <li>14.1 The Electronic Transactions Bill 2023 (SB. 94), if enacted, will provide legal
+                                recognition for electronic documents, signatures, and records. Vendors must ensure their
+                                operations align with these provisions, including: - Using secure electronic signatures
+                                for contracts. - Maintaining accurate electronic records of transactions. - Protecting
+                                consumer data in line with data security and privacy measures.</li>
+                            <li>14.2 Ojaeko.net will provide guidance to Vendors on compliance with the Bill once it is
+                                enacted.</li>
+                        </ul>
+                    </li>
+
+                    <li>15. Contact Information
+                        <ul>
+                            <li>For questions, complaints, or support, contact Ojaeko.net at: Email: support@ojaeko.net
+                                Address: [Insert Ojaeko.net’s physical address in Lagos, Nigeria] - Phone: [Insert
+                                contact number]</li>
+                        </ul>
+                    </li>
+
+                    <li>16. Miscellaneous
+                        <ul>
+                            <li>16.1 Force Majeure: Ojaeko.net is not liable for delays or failures to perform due to
+                                events beyond its control, such as power outages, internet disruptions, or government
+                                actions.</li>
+                            <li>16.2 Severability: If any provision of these Terms is found to be invalid or
+                                unenforceable, the remaining provisions shall remain in full force and effect.</li>
+                            <li>16.3 Entire Agreement: These Terms constitute the entire agreement between Ojaeko.net
+                                and the Vendor, superseding any prior agreements.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                By registering as a Vendor on Ojaeko.net, you acknowledge that you have read, understood, and agree
+                to be bound by these Terms and Conditions.
+                <br /><br />
+                Contact: support@ojaeko.net
+            </div>
+            <span class="toggle-link" id="toggleBtn">See More</span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script src="https://kit.fontawesome.com/74b0f74a10.js" crossorigin="anonymous"></script>
+    <script>
+        const toggleBtn = document.getElementById("toggleBtn");
+        const termsBox = document.getElementById("termsBox");
+
+        toggleBtn.addEventListener("click", () => {
+            termsBox.classList.toggle("expanded");
+            toggleBtn.textContent = termsBox.classList.contains("expanded") ? "See Less" : "See More";
+        });
+    </script>
+</body>
+
+</html>
