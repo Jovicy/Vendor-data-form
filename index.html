@@ -7,6 +7,7 @@
     <title>Vendor Data Collection Form | Ojaeko</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/Oja Eko logo_Favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -14,52 +15,65 @@
         <img src="./img/Main-logo.svg" alt="Logo" />
     </div>
 
-    <form action="submit" class="main-form" enctype="multipart/form-data">
+    <form id="submit-to-google-sheet" name="submit-to-google-sheet" class="main-form" enctype="multipart/form-data">
         <h5 class="form-title">Data collection form for prospective vendors.</h5>
 
         <div class="form-group-cont">
             <div class="form-group extra">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+                <input type="text" id="name" name="Full Name" placeholder="Enter your full name" required />
             </div>
 
             <div class="form-group extra">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                <input type="email" id="email" name="Email" placeholder="Enter your email" required />
             </div>
         </div>
 
         <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+            <input type="tel" id="phone" name="Phone Number" placeholder="Enter your phone number" required />
         </div>
 
         <div class="form-group-cont">
             <div class="form-group extra">
                 <label for="signature">Digital Signature</label>
-                <input type="file" id="signature" name="signature" accept="image/*" required />
+                <input type="file" id="signature" name="Digital Signature URL" accept="image/*" required />
             </div>
 
             <div class="form-group extra">
                 <label for="passport">Passport Photo</label>
-                <input type="file" id="passport" name="passport" accept="image/*" required />
+                <input type="file" id="passport" name="Passport Photo URL" accept="image/*" required />
             </div>
         </div>
 
         <div class="form-group">
             <label for="category">Category of Product/Service</label>
-            <input type="text" id="category" name="category" placeholder="E.g., Fashion, Food, Electronics" required />
+            <input type="text" id="category" name="Product/Service Category"
+                placeholder="E.g., Fashion, Food, Electronics" required />
+        </div>
+
+        <div class="form-group-cont">
+            <div class="form-group extra">
+                <label for="bankName">Bank Name</label>
+                <input type="text" id="bankName" name="Bank Name" placeholder="Enter your bank name" required />
+            </div>
+
+            <div class="form-group extra">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="Account Number" placeholder="Enter your account number"
+                    required />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="account">Account Details</label>
-            <textarea id="account" name="account" placeholder="Bank name, Account number, Account name"
-                required></textarea>
+            <label for="accountName">Account Name</label>
+            <input type="text" id="accountName" name="Account Name" placeholder="Enter your account name" required />
         </div>
 
         <div class="form-group">
             <label for="address">Address</label>
-            <textarea id="address" name="address" placeholder="Enter your full business or home address"
+            <textarea id="address" name="Address" placeholder="Enter your full business or home address"
                 required></textarea>
         </div>
 
@@ -340,6 +354,60 @@
             submitContainer.style.display = checkbox.checked ? 'block' : 'none';
         });
     </script>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyPIKi3iWq2kPHT5_9fMLXNlC4UdRl6rngWuBb9J7lj0nZBAqA7v_mo5I1YnHlicQd0hQ/exec";
+        const form = document.forms["submit-to-google-sheet"];
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            const signatureFile = document.getElementById("signature").files[0];
+            const passportFile = document.getElementById("passport").files[0];
+
+            if (!signatureFile || !passportFile) {
+                swal("Error", "Please upload both required files.", "error");
+                return;
+            }
+
+            if (signatureFile.size > 2 * 1024 * 1024 || passportFile.size > 2 * 1024 * 1024) {
+                swal("Error", "Each file must be less than 2MB.", "error");
+                return;
+            }
+
+            try {
+                const [signatureBase64, passportBase64] = await Promise.all([
+                    readFileAsBase64(signatureFile),
+                    readFileAsBase64(passportFile),
+                ]);
+
+                formData.set("Digital Signature URL", signatureBase64);
+                formData.set("Passport Photo URL", passportBase64);
+
+                const response = await fetch(scriptURL, { method: "POST", body: formData });
+
+                if (response.ok) {
+                    swal("Done", "Submitted Successfully.", "success");
+                    form.reset();
+                } else {
+                    swal("Error", "Submission failed. Try again!", "error");
+                }
+            } catch (error) {
+                swal("Error", "File processing failed.", "error");
+            }
+        });
+
+        function readFileAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(",")[1]);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
+
 
 
 </body>
